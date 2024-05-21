@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const theme = {
   palette: {
-    //PIGGYVEST BACKGROUND COLORS
+    //ONEKEY COLOR PALLETES
     PIGGYBLUE: "#0d60d8",
     SAFEBLUE: "#2295f2",
     TARGETGREEN: "#10b259",
@@ -26,9 +26,9 @@ const GlobalStyles = createGlobalStyle`
      html {
           padding: 0;
           margin: 0;
-          font-family: Eina01-Regular,sans-serif!important;
+          font-family: IBMPlexSans-Regular, sans-serif;
           background: ${theme.palette.BACKGROUNDWHITE};
-          color: ${theme.palette.SUBBLACK1};
+          color: ${theme.palette.MAINBLACK};
           line-height: 27.2px;
           font-size: 16px;
           letter-spacing: -.03em;
@@ -40,20 +40,20 @@ const GlobalStyles = createGlobalStyle`
      }
      @media only screen and (max-width: 992px) {
           body {
-               text-align: center!important;
+               text-align: center;
           }
      }
      :root {
           --altumcode-spacing: 20px;
      }
      h1,h2,h3,h4,h5,h6 {
-          font-family: Eina01-Bold!important;
+          font-family: IBMPlexSans-Bold;
           font-weight: 700;
           color: ${theme.palette.MAINBLACK}
      }
 
      a {
-          font-weight: 600!important
+          font-weight: 600;
      }
 
      h1,h2,h3,h4,h5,h6,p {
@@ -98,12 +98,6 @@ const GlobalStyles = createGlobalStyle`
      h6 {
           font-size: 12.82px
      }
-     [class*=col-] {
-          position: relative;
-          width: 100%;
-          padding-right: 15px;
-          padding-left: 15px;
-     }
      a,
      a:hover {
           text-decoration: none;
@@ -117,6 +111,23 @@ const GlobalStyles = createGlobalStyle`
      #root,
      #__next {
           isolation: isolate;
+          display: block;
+     }
+     #root {
+          position: relative;
+     }
+     .screen-reader-text {
+          clip: rect(1px, 1px, 1px, 1px);
+          word-wrap: normal !important;
+          border: 0;
+          clip-path: inset(50%);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          overflow-wrap: normal !important;
+          padding: 0;
+          position: absolute !important;
+          width: 1px;
      }
 `;
 

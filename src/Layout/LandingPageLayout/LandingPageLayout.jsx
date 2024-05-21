@@ -1,11 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./footer/Footer";
+import Header from "./header/Header";
 
 function LandingPageLayout() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
 }
 

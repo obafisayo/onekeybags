@@ -4,10 +4,10 @@ import Router from './routes/Routes';
 
 function App() {
   return (
-    <div>
+    <>
       <Router />
       <ScrollToTop />
-    </div>
+    </>
   );
 }
 
