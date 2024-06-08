@@ -1,15 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
 
-function About() {
-    return (
-        <StyledDiv>
-            This is the about page
-        </StyledDiv>
-    );
+function About(){
+  return (
+    <div className="bg-red-500">
+        About
+        <h1 className="text-yellow-600">
+            Title
+        </h1>
+    </div>
+  )
 }
 
-const StyledDiv = styled.div`
-    
-`;
 export default About;

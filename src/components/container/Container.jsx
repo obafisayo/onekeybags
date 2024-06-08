@@ -1,30 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+// import React from "react";
+import PropTypes from "prop-types"
 
 function Container({ classname, children }) {
      return (
-          <StyledDiv className={classname ? classname : ""}>
+          <div className={`${classname} container `}>
                {children}
-          </StyledDiv>
+          </div>
      );
 }
 
-const StyledDiv = styled.div`
-     /* border: 2px solid green; */
-     padding: 8px 0px 8px 0px;
-     max-width: 1165px;
-     width: 100%;
-     margin: auto;
-     &.flex {
-          display: flex;
-          justify-content: space-between;
-     }
-     &.align-center {
-          align-items: center;
-     }
-     @media only screen and (max-width: 1024px) {
-          padding: 8px 30px 8px 30px;
-          
-     }
-`;
+Container.propTypes = {
+     classname: PropTypes.string,
+     children: PropTypes.node.isRequired
+}
+
 export default Container

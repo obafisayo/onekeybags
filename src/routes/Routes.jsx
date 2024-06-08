@@ -12,6 +12,7 @@ import {
     FORGOT_PASSWORD,
     HANDBAGS,
     HOME,
+    HOWTOORDER,
     LAPTOPBAGS,
     LUGGAGE,
     NOTFOUND,
@@ -83,6 +84,10 @@ export default function Router() {
                 },
                 {
                     path: FAQS,
+                    element: <Faq />
+                },
+                {
+                    path: HOWTOORDER,
                     element: <Faq />
                 },
                 {

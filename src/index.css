@@ -2,16 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer components {
+    .search-bar{
+        @apply w-0 group-hover:w-[300px] transition-all
+        duration-300 rounded-full group-hover:border
+        group-hover:border-gray-500 px-3 py-1 focus:outline-none
+        dark:border-gray-800 dark:bg-gray-900
+        group-hover:dark:bg-gray-800;
+    }
+    .nav-active{
+        @apply absolute top-0 bottom-0 block 
+        left-0 m-auto right-1/4 bg-blue-500 dark:text-white p-4
+    }
+    .nav-active > ul {
+        @apply divide-y-2 divide-gray-400
+        tail:flex-col tail:grid tail:gap-14
+        pt-20
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    }
+    .nav-active > ul > li {
+        @apply divide-y-2 divide-gray-400
+    }
+    /* .nav-active{
+        @apply tail:absolute tail:top-0 tail:bottom-0 tail:block
+        tail:left-0 tail:m-auto tail:right-0 tail:bg-red-300 tail:z-50
+        ;
+    } */
 }
