@@ -1,14 +1,15 @@
-import React from "react";
+// import React from "react";
 import styled from "styled-components";
-import { RxReload } from "react-icons/rx";
-import { TawkMessengerContext } from "../../../Layout/LandingPageLayout/LandingPageLayout";
+// import { RxReload } from "react-icons/rx";
+// import { TawkMessengerContext } from "../../../Layout/LandingPageLayout/LandingPageLayout";
+import HeroSection from "../../../components/heroSection/HeroSection";
 
 function Home() {
-    const { maximize } = React.useContext(TawkMessengerContext);
-    const [roll, setRoll] = React.useState(false)
+    // const { maximize } = React.useContext(TawkMessengerContext);
+    // const [roll, setRoll] = React.useState(false)
     return (
         <StyledDiv className="container">
-            This is the Home page
+            {/* This is the Home page
             <br />
             <button type="button" id="btn"
                 onClick={() => {
@@ -29,7 +30,8 @@ function Home() {
             >
                 Maximize TawkTo
                 {roll && <RxReload className="animate-spin h-5 w-5 mr-3"/>}
-            </button>
+            </button> */}
+            <HeroSection />
         </StyledDiv>
     );
 }

@@ -1,27 +1,11 @@
 import React from 'react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
+import { CloseContext } from '../../Layout/LandingPageLayout/header/Header';
 
 
 const Hamburger = () => {
-    const [close, setClose] = React.useState(false)
-    React.useEffect(() => {
-        const nav_el = document.querySelector("#nav-el")
-        const handleClickOutside = (event) => {
-            if (!event.target.closest('.hamburger')) {
-                if (nav_el.classList.contains("nav-active")) {
-                    setClose(false)
-                    nav_el.classList.remove("nav-active")
-                    nav_el.classList.add("hidden")
-                }
-            }
-        };
-
-        document.addEventListener('click', handleClickOutside);
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []);
+    const { close, setClose } = React.useContext(CloseContext)
     function handleClick() {
         const nav_el = document.querySelector("#nav-el")
         nav_el.classList.toggle("nav-active")

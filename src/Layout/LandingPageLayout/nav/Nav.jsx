@@ -1,11 +1,117 @@
-// import React from "react";
+import React from "react";
 import { FaCaretDown } from "react-icons/fa6";
 import { InternalNavlink } from "../../../components/Link/Link";
-import { navConfig } from "./navConfig";
 import { HOWTOORDER } from "../../../routes/RouteConstants";
 import styled from "styled-components";
+import { CloseContext } from "../header/Header";
+import {
+    ABS,
+    BACKPACKS,
+    HANDBAGS,
+    LAPTOPBAGS,
+    PC,
+    PP,
+    PU,
+    TRAVELSPORTSBAGS
+} from "../../../routes/RouteConstants";
 
 function Nav() {
+    const { setClose } = React.useContext(CloseContext)
+    const navConfig = [
+        {
+            id: 1,
+            name: "Luggage",
+            path: "#luggage",
+            dropdown: [
+                {
+                    id: 1,
+                    name: "ABS",
+                    path: ABS,
+                    func: handleClick
+                },
+                {
+                    id: 2,
+                    name: "PC",
+                    path: PC,
+                    func: handleClick
+                },
+                {
+                    id: 3,
+                    name: "PP",
+                    path: PP,
+                    func: handleClick
+                },
+                {
+                    id: 4,
+                    name: "PU",
+                    path: PU,
+                    func: handleClick
+                }
+            ]
+        },
+        {
+            id: 2,
+            name: "Backpack",
+            path: "#Backpack",
+            dropdown: [
+                {
+                    id: 1,
+                    name: "Backpacks",
+                    path: BACKPACKS,
+                    func: handleClick
+                },
+                {
+                    id: 2,
+                    name: "Laptop bags",
+                    path: LAPTOPBAGS,
+                    func: handleClick
+                },
+                {
+                    id: 3,
+                    name: "Handbags",
+                    path: HANDBAGS,
+                    func: handleClick
+                },
+                {
+                    id: 4,
+                    name: "travel & sports bags",
+                    path: TRAVELSPORTSBAGS,
+                    func: handleClick
+                }
+            ]
+        },
+        {
+            id: 3,
+            name: "Quick links",
+            path: "#links",
+            dropdown: [
+                {
+                    id: 1,
+                    name: "Trending Products",
+                    path: "/#",
+                    func: handleClick
+                },
+                {
+                    id: 2,
+                    name: "Best Selling",
+                    path: "/#",
+                    func: handleClick
+                },
+                {
+                    id: 3,
+                    name: "Top Rated",
+                    path: "/#",
+                    func: handleClick
+                }
+            ]
+        }
+    ];
+    function handleClick() {
+        setClose(false)
+        const nav_el = document.querySelector("#nav-el")
+        nav_el.classList.remove("nav-active")
+        nav_el.classList.add("hidden")
+    }
     return (
         <StyledNav id="nav-el"
             className="hidden lg:block">
@@ -32,7 +138,7 @@ function Nav() {
                         dark:text-white">
                             <ul className="space-y-2">
                                 {data.dropdown.map((element, index) => (
-                                    <li key={index}  id="ul-2">
+                                    <li key={index} onClick={element.func} id="ul-2">
                                         <InternalNavlink to={element.path}
                                             className="lg:text-gray-500
                                             dark:hover:text-white
@@ -48,7 +154,7 @@ function Nav() {
                         </div>
                     </li>
                 ))}
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={handleClick}>
                     <InternalNavlink to={HOWTOORDER}
                         className="flex items-center
                         font-md lg:text-gray-500 hover:text-black
@@ -63,7 +169,7 @@ function Nav() {
 }
 
 const StyledNav = styled.nav`
-    &.nav-activ {
+    &.nav-active {
         animation: bounce 1s ease-in-out;
         @keyframes bounce {
             0%, 100% {
