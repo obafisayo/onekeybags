@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "rgb(14 165 233 / var(--tw-text-opacity))",
+        primary: "rgb(14 165 233)",
         secondary: "#f42c37",
         brandYellow: "#fdc62e",
         brandGreen: "#2dcc6f",
